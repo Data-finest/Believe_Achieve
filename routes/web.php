@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\GetMembersComponent;
 use App\Http\Livewire\MemberComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', GetMembersComponent::class)->name('home');
 
 Route::prefix('member')->name('member.')->group(function () {
     Route::get('upload', MemberComponent::class)->name('upload');
